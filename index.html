@@ -3,6 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Critical layout guards to minimize CLS while full CSS loads asynchronously. */
+    body { margin: 0; font-family: 'Lato', Arial, sans-serif; line-height: 1.7; background: #fff2d2; color: #11110f; }
+    img { display: block; max-width: 100%; height: auto; }
+    .top-bar { background: #184f2b; color: rgba(255, 242, 210, 0.85); text-align: center; padding: 9px 16px; font-size: .875rem; }
+    header { position: sticky; top: 0; z-index: 100; background: #006f76; box-shadow: 0 2px 12px rgba(17, 17, 15, 0.22); }
+    #siteNav { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 68px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; line-height: 1.1; }
+    .nav-logo { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+    .nav-brand-text { display: flex; flex-direction: column; }
+    .brand-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 900; color: #fff2d2; }
+    .brand-phone { font-size: .8rem; color: #f6b32b; font-weight: 700; letter-spacing: .04em; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .menu-toggle { display: none; }
+    .hero { background: linear-gradient(150deg, #12324a 0%, #0e4b60 52%, #1f6a78 100%); color: #fff2d2; padding: 96px 0 80px; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr); gap: 64px; align-items: start; }
+    .hero-logo { width: min(100%, 320px); height: auto; object-fit: contain; }
+    @media (max-width: 820px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-logo { width: min(100%, 260px); }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-links { display: none; }
+    }
+  </style>
 
   <!-- ═══════════════════════════════════════════
        PRIMARY SEO META
@@ -124,10 +150,10 @@
   ═══════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=optional" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=optional" />
     <link rel="stylesheet" href="style.css" />
   </noscript>
 </head>
@@ -147,7 +173,7 @@
   <header>
     <nav id="siteNav" aria-label="Main navigation">
       <a class="nav-brand" href="/" aria-label="Pickwick Plumbing home">
-        <img src="color-logo-no-number.webp" alt="Pickwick Plumbing logo" class="nav-logo" />
+        <img src="color-logo-no-number.webp" alt="Pickwick Plumbing logo" class="nav-logo" width="2000" height="2000" />
         <span class="nav-brand-text">
           <span class="brand-name">Pickwick Plumbing</span>
           <span class="brand-phone"><strong>(731) 412-2857</strong></span>
@@ -175,7 +201,7 @@
       <div class="hero-inner">
         <!-- LOGO -->
         <div class="hero-badge-col">
-          <img src="color-logo-no-number.webp" alt="Pickwick Plumbing logo" class="hero-logo" />
+          <img src="color-logo-no-number.webp" alt="Pickwick Plumbing logo" class="hero-logo" width="2000" height="2000" />
         </div>
 
         <div class="hero-text">

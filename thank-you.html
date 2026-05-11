@@ -3,16 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Critical layout guards to minimize CLS while full CSS loads asynchronously. */
+    body { margin: 0; font-family: 'Lato', Arial, sans-serif; line-height: 1.7; background: #fff2d2; color: #11110f; }
+    img { display: block; max-width: 100%; height: auto; }
+    .top-bar { background: #184f2b; color: rgba(255, 242, 210, 0.85); text-align: center; padding: 9px 16px; font-size: .875rem; }
+    header { position: sticky; top: 0; z-index: 100; background: #006f76; box-shadow: 0 2px 12px rgba(17, 17, 15, 0.22); }
+    #siteNav { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 68px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; line-height: 1.1; }
+    .nav-logo { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+    .nav-brand-text { display: flex; flex-direction: column; }
+    .brand-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 900; color: #fff2d2; }
+    .brand-phone { font-size: .8rem; color: #f6b32b; font-weight: 700; letter-spacing: .04em; }
+  </style>
   <title>Thank You | Pickwick Plumbing</title>
   <meta name="description" content="Thanks for contacting Pickwick Plumbing. We received your request and will follow up shortly." />
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://pickwickplumbing.com/thank-you.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=optional" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=optional" />
     <link rel="stylesheet" href="style.css" />
   </noscript>
 </head>
@@ -24,7 +37,7 @@
   <header>
     <nav id="siteNav" aria-label="Main navigation">
       <a class="nav-brand" href="index.html" aria-label="Pickwick Plumbing home">
-        <img src="color-logo-no-number.png" alt="Pickwick Plumbing logo" class="nav-logo" />
+        <img src="color-logo-no-number.png" alt="Pickwick Plumbing logo" class="nav-logo" width="2000" height="2000" />
         <span class="nav-brand-text">
           <span class="brand-name">Pickwick Plumbing</span>
           <span class="brand-phone">(731) 412-2857</span>
